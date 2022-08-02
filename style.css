@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+:root {
+    --color-bg: #2e385b;
+    --color-bgNd: rgb(73, 86, 131);
+    --color-btn: #F4D35E;
+    --color-cell: #FAF0CA;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+header {
+    min-height: 5vh;
+}
+
+footer {
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.github {
+    transition: all 0.08s;
+    width: 24px;
+    height: 24px;
+}
+
+.github img{
+    width: 20px;
+    height: 20px;
+}
+
+.github:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    gap: 20px;
+}
+
+.sketch__menu {
+    background-color: var(--color-bgNd);
+    height: auto;
+    padding: 20px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 15px;
+}
+
+.game__field {
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 0;
+    box-shadow: 0 0 5px black;
+    background-color: var(--color-cell);
+}
+
+.gameGrid {
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.clear__board,
+.randomColor,
+.grid__size,
+.erase,
+.toggleBorder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    background-color: var(--color-btn);
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 100ms;
+}
+
+.clear__board:hover,
+.grid__size:hover,
+.randomColor:hover,
+.erase:hover,
+.toggleBorder:hover {
+    transform: scale(1.05);
+}
+
+input[type = 'color'] {
+    border: none;
+    padding: 0;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
