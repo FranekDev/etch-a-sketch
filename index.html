@@ -9,15 +9,38 @@
     <script src="./main.js" defer></script>
 </head>
 <body>
+    <header>Etch-A-Sketch</header>
     <div class="container">
+        
         <div class="sketch__menu">
-            <div class="grid__size">  
-                <button>Enter grid size</button>
+            <div class="color">
+                <input type="color" name="" id="colorPicker">
             </div>
-            <div class="clear__board">Clear</div>
+            <div class="randomColor">
+                Random color
+            </div>
+            <div class="grid__size">  
+                Enter grid size
+            </div>
+            <!-- Add on lick to toggle border on/off  -->
+            <div class="toggleBorder">Border</div>
+            <div class="erase">
+                Erase
+            </div>
+            <div class="clear__board">
+                Clear
+            </div>
         </div>
         <div class="game__field"></div>
+        
     </div>
-    <footer></footer>
+    <footer>
+        <span class="description">
+            Created by FranekDev
+        </span>
+        <div class="github">
+            <a href="https://github.com/FranekDev/etch-a-sketch" target="_blank"><img src="./img/github.png" alt="Github"></a>
+        </div>
+    </footer>
 </body>
 </html>
