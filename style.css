@@ -5,6 +5,7 @@
     --color-bgNd: rgb(73, 86, 131);
     --color-btn: #F4D35E;
     --color-cell: #FAF0CA;
+    --color-textNd: rgb(224, 224, 224);
 }
 
 * {
@@ -24,6 +25,8 @@ body {
 
 header {
     min-height: 5vh;
+    font-size: 20px;
+    color: var(--color-textNd);
 }
 
 footer {
@@ -90,12 +93,7 @@ footer {
     height: 100%;
 }
 
-.clear__board,
-.randomColor,
-.grid__size,
-.erase,
-.toggleBorder,
-#colorPicker {
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,17 +106,60 @@ footer {
     transition: all 100ms;
 }
 
-.clear__board:hover,
-.grid__size:hover,
-.randomColor:hover,
-.erase:hover,
-.toggleBorder:hover {
+.btn:hover {
     transform: scale(1.05);
 }
 
-input[type = 'color'] {
+input[type = 'color'], #colorPicker {
+    display: block;
+    background: none;
     border: none;
     padding: 0;
-    overflow: hidden;
-    margin: 0;
+    background: none;
+} 
+
+#colorPicker::-webkit-color-swatch{
+    border-radius: 20px;
+    width: 130px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+#colorPicker::-moz-color-swatch {
+    border-radius: 20px;
+    width: 130px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+.description {
+    color: var(--color-textNd)
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+    .sketch__menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: 400px;
+        height: 130px;
+    }
+    .btn {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #colorPicker::-webkit-color-swatch{
+        width: 100%;
+    }
+    
+    #colorPicker::-moz-color-swatch {
+        width: 100%;
+    }
+    
 }
