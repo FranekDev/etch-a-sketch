@@ -6,6 +6,8 @@ const eraseBtn = document.querySelector('.erase');
 const borderToggle = document.querySelector('.toggleBorder');
 const gridSize = document.querySelector('.grid__size');
 
+const defaultSize = 16;
+
 let setMode = 'default';
 
 // To Do
@@ -20,21 +22,21 @@ function disableBorder() {
     // });
 }
 
-eraseBtn.addEventListener('click', () => {
-    setMode = 'erase';
-    console.log("erase click");
-});
 
 gridSize.addEventListener('click', setGridSize);
 
 function setGridSize(size) {
     
-    size = parseInt(prompt('Enter grid size:'));
+    size = parseInt(prompt('Enter grid size: (2-64)'));
     
-    console.log(size);
-
-    clearGrid();
-    createGrid(size);
+    if (size >= 2 && size <= 64) {
+        console.log(size);
+        clearGrid();
+        createGrid(size);
+    }
+    else {
+        alert('Too large');
+    }
 }
 
 function clearGrid() {
@@ -52,6 +54,7 @@ function createGrid(size) {
         const gameGrid = document.createElement('div');
 
         gameGrid.classList.add('gameGrid');
+    
         gameGrid.addEventListener('mouseover', changeColor);
         gameGrid.addEventListener('click', changeColor);
         gameField.appendChild(gameGrid);
@@ -62,8 +65,15 @@ function createGrid(size) {
             gameGrid.style.background = 'none';
         });
 
-        borderToggle.addEventListener('mousedown', () => {
-            gameGrid.style.border = 'none';
+        borderToggle.addEventListener('click', () => {
+            // gameGrid.style.border = 'none';
+            setMode = 'noBorder';
+            if (setMode === 'noBorder'){
+                gameGrid.style.border = 'none';
+            }
+            else if (setMode !== 'noBorder'){
+                gameGrid.style.border = '1px solid black';
+            }
         });
 
     }
@@ -82,13 +92,20 @@ document.body.onmouseup = () => {
 //     setMode = 'default';
 //     console.log("clicked body " + setMode);
 // });
+
+// Choose drawing mode
+colorPicker.addEventListener('click', () => {
+    setMode = 'staticColor';
+    console.log(setMode);
+});
+
 randomColor.addEventListener('click', () => {
     setMode = 'randomRGB'; 
 });
 
-colorPicker.addEventListener('click', () => {
-    setMode = 'staticColor';
-    console.log(setMode);
+eraseBtn.addEventListener('click', () => {
+    setMode = 'erase';
+    console.log("erase click");
 });
 
 function changeColor(e) {
@@ -119,5 +136,5 @@ function setRandomColor() {
     return background;
 }
 
-window.onload = () => createGrid(size = 16);
+window.onload = () => createGrid(defaultSize);
 // createGrid(size = 16);
