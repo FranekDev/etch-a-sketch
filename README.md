@@ -1,4 +1,4 @@
 # etch-a-sketch
-Web sketch app made with JS
+## Online etch a sketch app made with JS, HTML and CSS
 
 [Live App](https://franekdev.github.io/etch-a-sketch/)
