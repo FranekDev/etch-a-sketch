@@ -111,7 +111,6 @@ footer {
 }
 
 input[type = 'color'], #colorPicker {
-    display: block;
     background: none;
     border: none;
     padding: 0;
@@ -136,6 +135,10 @@ input[type = 'color'], #colorPicker {
 
 .description {
     color: var(--color-textNd)
+}
+
+.color {
+    background: none;
 }
 
 @media only screen and (max-width: 900px) {
