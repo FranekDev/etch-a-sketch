@@ -60,7 +60,7 @@ footer {
     gap: 20px;
 }
 
-.sketch__menu {
+.sketchMenu {
     background-color: var(--color-bgNd);
     height: auto;
     padding: 20px;
@@ -73,7 +73,7 @@ footer {
     border-radius: 15px;
 }
 
-.game__field {
+.gameField {
     margin: 10px;
     width: 400px;
     height: 400px;
@@ -141,11 +141,21 @@ input[type = 'color'], #colorPicker {
     background: none;
 }
 
+.borderOff {
+    justify-content: center;
+    align-items: center;
+}
+.borderOn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 900px) {
     .container {
         flex-direction: column-reverse;
     }
-    .sketch__menu {
+    .sketchMenu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);

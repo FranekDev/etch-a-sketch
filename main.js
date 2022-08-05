@@ -1,14 +1,17 @@
-const gameField = document.querySelector('.game__field');
+const gameField = document.querySelector('.gameField');
 const randomColor = document.querySelector('.randomColor');
-const clearBoard = document.querySelector('.clear__board');
+const clearBoard = document.querySelector('.clearBoard');
 const colorPicker = document.querySelector('#colorPicker');
 const eraseBtn = document.querySelector('.erase');
-const borderToggle = document.querySelector('.toggleBorder');
-const gridSize = document.querySelector('.grid__size');
+const gridSize = document.querySelector('.gridSize');
+const borderOn = document.querySelector('.borderOn');
+const borderOff = document.querySelector('.borderOff');
 
 const defaultSize = 16;
 
 let setMode = 'default';
+
+gridSize.addEventListener('click', setGridSize);
 
 function setGridSize(size) {
     
@@ -52,15 +55,18 @@ function createGrid(size) {
         });
 
         // Remove border
-        borderToggle.addEventListener('click', () => {
+        borderOff.addEventListener('click', () => {
             gameGrid.style.border = 'none';
+        });
+
+        // Add border
+        borderOn.addEventListener('click', () => {
+            gameGrid.style.border = '1px solid #c9c2a7';
         });
 
     }
   
 }
-
-gridSize.addEventListener('click', setGridSize);
 
 let mouseDown = false
 document.body.onmousedown = () => {
@@ -69,7 +75,6 @@ document.body.onmousedown = () => {
 document.body.onmouseup = () => {
     mouseDown = false;
 };
-
 
 // Choose drawing mode
 colorPicker.addEventListener('click', () => {
@@ -82,6 +87,16 @@ randomColor.addEventListener('click', () => {
 
 eraseBtn.addEventListener('click', () => {
     setMode = 'erase';
+});
+
+// Show and hide button to toggle border
+borderOn.addEventListener('click' , () => {
+    borderOn.style.display = 'none';
+    borderOff.style.display = 'flex';
+});
+borderOff.addEventListener('click', (size) => {
+    borderOn.style.display = 'flex';
+    borderOff.style.display = 'none';
 });
 
 function changeColor(e) {
