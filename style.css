@@ -164,17 +164,22 @@ input[type = 'color'], #colorPicker {
         height: auto;
     }
 
+    .gameField {
+        width: 330px;
+        height: 330px;
+    }
+
     .sketchMenu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        width: 400px;
+        width: 330px;
         height: 130px;
     }
 
     .btn {
         width: 100%;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     #colorPicker::-webkit-color-swatch{
