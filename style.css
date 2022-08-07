@@ -17,20 +17,25 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-bg);
+}
+
+.content {
     display: flex;
+    min-height: 100vh;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
 }
 
 header {
-    min-height: 5vh;
+    height: 50px;
     font-size: 20px;
     color: var(--color-textNd);
+    text-shadow: 5px 5px 0 black;
 }
 
 footer {
-    min-height: 5vh;
+    min-height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,8 +44,6 @@ footer {
 
 .github {
     transition: all 0.08s;
-    width: 24px;
-    height: 24px;
 }
 
 .github img{
@@ -56,7 +59,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    height: 400px;
     gap: 20px;
 }
 
@@ -115,9 +118,11 @@ input[type = 'color'], #colorPicker {
     border: none;
     padding: 0;
     background: none;
+    width: 100%;
+    height: auto;
 } 
 
-#colorPicker::-webkit-color-swatch{
+#colorPicker::-webkit-color-swatch {
     border-radius: 20px;
     width: 130px;
     height: 40px;
@@ -145,6 +150,7 @@ input[type = 'color'], #colorPicker {
     justify-content: center;
     align-items: center;
 }
+
 .borderOn {
     display: none;
     justify-content: center;
@@ -152,9 +158,12 @@ input[type = 'color'], #colorPicker {
 }
 
 @media only screen and (max-width: 900px) {
+
     .container {
         flex-direction: column-reverse;
+        height: auto;
     }
+
     .sketchMenu {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -162,6 +171,7 @@ input[type = 'color'], #colorPicker {
         width: 400px;
         height: 130px;
     }
+
     .btn {
         width: 100%;
         font-size: 14px;

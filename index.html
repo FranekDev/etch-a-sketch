@@ -9,38 +9,40 @@
     <script src="./main.js" defer></script>
 </head>
 <body>
-    <header>Etch-A-Sketch</header>
-    <div class="container">
-        
-        <div class="sketchMenu">
-            <div class="color btn">
-                <input type="color" name="" id="colorPicker" class="btn">
+    <div class="content">
+        <header><h1>Etch-A-Sketch</h1></header>
+        <div class="container">
+            
+            <div class="sketchMenu">
+                <div class="color btn">
+                    <input type="color" name="" id="colorPicker" class="btn">
+                </div>
+                <div class="randomColor btn">
+                    Random color
+                </div>
+                <div class="gridSize btn">  
+                    Enter grid size
+                </div>
+                <div class="borderOff btn">Border off</div>
+                <div class="borderOn btn">Border on</div>
+                <div class="erase btn">
+                    Erase
+                </div>
+                <div class="clearBoard btn">
+                    Clear
+                </div>
             </div>
-            <div class="randomColor btn">
-                Random color
-            </div>
-            <div class="gridSize btn">  
-                Enter grid size
-            </div>
-            <div class="borderOff btn">Border off</div>
-            <div class="borderOn btn">Border on</div>
-            <div class="erase btn">
-                Erase
-            </div>
-            <div class="clearBoard btn">
-                Clear
-            </div>
+            <div class="gameField"></div>
+            
         </div>
-        <div class="gameField"></div>
-        
+        <footer>
+            <span class="description">
+                Created by FranekDev
+            </span>
+            <div class="github">
+                <a href="https://github.com/FranekDev/etch-a-sketch" target="_blank"><img src="./img/github.png" alt="Github"></a>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <span class="description">
-            Created by FranekDev
-        </span>
-        <div class="github">
-            <a href="https://github.com/FranekDev/etch-a-sketch" target="_blank"><img src="./img/github.png" alt="Github"></a>
-        </div>
-    </footer>
 </body>
 </html>

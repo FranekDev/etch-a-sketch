@@ -94,6 +94,7 @@ borderOn.addEventListener('click' , () => {
     borderOn.style.display = 'none';
     borderOff.style.display = 'flex';
 });
+
 borderOff.addEventListener('click', (size) => {
     borderOn.style.display = 'flex';
     borderOff.style.display = 'none';
